@@ -25,7 +25,7 @@
     <!-- 設置 Canonical 標籤
 
   • 在每個網站的 <head> 中加入 <link rel="canonical"> 標籤，告訴 Google 哪個 URL 是標準版本。 -->
-  <link rel="canonical" href="https://www.littlecat.tw/products/halfday-52.html">
+  <link rel="canonical" href="https://www.seewave.tw/products/halfday-52.html">
    
     
 cat
@@ -581,6 +581,31 @@ cat
  
 </nav>
 
+<script>
+   
+  document.addEventListener('DOMContentLoaded', function () {
+  // 找到左右兩個 collapse 區塊
+  const collapses = document.querySelectorAll('.navbar-collapse');
+
+  // 找到所有 collapse 區塊裡的 a 連結
+  const allLinks = document.querySelectorAll('.navbar-collapse a');
+
+  allLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      // 手機版才收起
+      if (window.innerWidth < 992) {
+        // 如果是 dropdown toggle，就不要收起
+        if (!link.classList.contains('dropdown-toggle')) {
+          collapses.forEach(collapse => {
+            collapse.classList.remove('show');
+          });
+        }
+      }
+    });
+  });
+});
+</script>
+
   <main class="main pt-4">
     <div class="container">
       <div class="row">
@@ -792,7 +817,7 @@ cat
 
 
                <!-- 加入購物車 -->
-               <!-- <hr>
+               <hr>
                <h4 class="fw-bold ">加入購物車</h4>
                <div class="simpleCart_shelfItem">
                  <h2 class="item_name">藝奇去趕海--潮間帶体驗</h2>
@@ -885,7 +910,7 @@ cat
                  <div class="d-grid gap-2 col-8 col-md-6 mx-auto">
                    <button type="button" id="item_add" class="item_add btn btn-dark">加入購物車</button>
                  </div>
-               </div> -->
+               </div>
 
 
               <!-- 地圖資訊 S-->
